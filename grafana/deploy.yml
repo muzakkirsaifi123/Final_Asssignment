@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: grafana
   namespace: cap
+  
 spec:
   replicas: 1
   selector:
