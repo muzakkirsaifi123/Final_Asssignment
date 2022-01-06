@@ -11,7 +11,7 @@ RUN mvn dependency:go-offline -B
 
 RUN mvn package -DskipTests
 
-FROM openjdk:18-jdk-alpine3.15
+FROM openjdk:8-jre-alpine
 
 #current working directory
 WORKDIR /my-project
@@ -20,6 +20,4 @@ WORKDIR /my-project
 COPY --from=maven target/springboot-starterkit-1.0.jar ./
 EXPOSE 8080
 # set the startup command to run your binary
-ENTRYPOINT ["java", "-jar"]
-
-CMD ["springboot-starterkit-1.0.jar"]
+CMD ["java", "-jar", "./springboot-starterkit-1.0.jar"]
