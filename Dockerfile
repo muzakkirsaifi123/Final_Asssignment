@@ -16,6 +16,6 @@ WORKDIR /my-project
 
 # copy over the built artifact from the maven image
 COPY --from=maven target/springboot-starterkit-1.0.jar ./
-EXPOSE 8081
+# EXPOSE 8081
 # set the startup command to run your binary
 CMD ["java", "-jar", "./springboot-starterkit-1.0.jar"]
