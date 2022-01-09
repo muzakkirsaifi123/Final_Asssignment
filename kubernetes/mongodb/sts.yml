@@ -33,9 +33,9 @@ spec:
             - name: MONGODB_REPLICA_SET_NAME
               value: "replicaset"
             - name: MONGODB_INITIAL_PRIMARY_HOST
-              value: "mongodb-0.mongodb.cicd.svc.cluster.local"
+              value: "mongodb-0.mongodb.cap.svc.cluster.local"
             - name: MONGODB_ADVERTISED_HOSTNAME
-              value: "$(POD_NAME).mongodb.cicd.svc.cluster.local"
+              value: "$(POD_NAME).mongodb.cap.svc.cluster.local"
             - name: ALLOW_EMPTY_PASSWORD
               value: "yes"
           command:
@@ -63,6 +63,6 @@ spec:
         accessModes: [ReadWriteOnce]
         resources:
           requests:
-            storage: 500Mi
+            storage: 1G
         storageClassName: standard
 
